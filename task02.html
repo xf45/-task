@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task02 </title>
+ 
+    <style>
+        .par
+        {
+         display:flex;
+        }
+        .left
+        {  
+             min-width:200px;
+            height:800px;
+            border:1px white solid;
+            background-color: #1e2933;
+            float:left;
+        }
+        .right
+        {   
+            flex:1;
+            height:400px;
+            border:1px white solid;
+            float:right;
+        }
+       .top
+       {
+         height:60px;
+         position:absolute;
+         left:210px;
+         top:10px;
+         /* border-bottom: #7c8591 1px solid; */
+        
+       }
+       .userp
+       {
+           display:flex;
+           position:relative;
+           top: 50px;
+           width:100%;
+       }
+    .userl
+    {
+        border-top: 1px #7c8591 solid;
+        width:320px;
+        height:380px;
+        float:left;
+    }
+    .userr
+    {
+        border-top: 1px #7c8591 solid;
+        height:380px;
+        flex:1;
+    }
+    .left-1
+    {   border: 1px #7c8591 solid;
+        color: aliceblue;
+        height:50px;
+        line-height: 50px;
+        text-align:center;
+    }
+    .left-2
+    {
+        border: 1px #7c8591 solid;
+        color: aliceblue;
+    }
+    .left-2-1
+    {
+         
+        position:relative;
+        left:25px;
+        top:10px;  
+    }
+    .left-2-2
+    {
+        position: relative;
+       left:25px;
+        bottom:20px;
+    }
+    .left-2-3
+    {
+       
+        color:#7c8591;
+        font-size: small;
+        position:relative;
+        left:75px;
+        bottom:15px;
+    }
+    .left-3{
+       
+        height:300px;
+    } 
+
+    .left-3-1
+    {
+        color:#7c8591;
+        font-size: small;
+        position:relative;
+        left:25px;
+        top:10px;
+    }
+    .spirt
+    {
+  
+       color:aliceblue;
+    }
+    .spirt div
+    { 
+        margin:15px;
+        position: relative;
+        left:10px;
+        top:20px;
+    }
+    .spirt span
+    {
+        float:left;
+        width: 20px;
+        height: 20px;
+        background-image: url(images/03_28.jpg);
+        color:aliceblue;
+    }
+    .spirt1
+    {
+        background-position: 0 0;
+    }
+    .spirt2
+    {
+        background-position: 0 -47px;
+    }
+    .spirt3
+    {
+        background-position: 0 -92px;
+    }
+    .spirt4
+    {
+        background-position: 0 -137px;
+    }
+    .spirt4-d
+    {   width:160px;
+        height:25px;
+        border-radius: 5px;
+        background-color: #5965db;
+    }
+    .spirt5
+    {
+        background-position: 0 -180px;
+    }
+    .spirt6
+    {  
+        background-position: 0 -225px;
+    }
+    .spirt7
+    {
+        background-position: 0 -295spx;
+    }
+    .left-3-2
+    {
+        color:#7c8591;
+        font-size: small;
+        position:relative;
+        left:25px;
+        top:20px;
+    }
+    .a
+    {
+       color:aliceblue;
+      
+    }
+    .a div
+    {
+        margin:15px;
+        position: relative;
+        left:10px;
+        top:20px;
+    }
+    .a1
+    { vertical-align:top;}
+    .a2
+    {
+         vertical-align:top;
+       
+    }
+    .b
+    {
+  
+       color:aliceblue;
+    }
+    .b div
+    { 
+        margin:15px;
+        position: relative;
+        left:10px;
+        top:20px;
+    }
+    .b span
+    {
+        float:left;
+        width: 20px;
+        height: 20px;
+        background-image: url(images/03_42.jpg);
+        color:aliceblue;
+    }
+    .b-2
+    {background-position: 0 -50px;}
+    .b-3
+    { background-position: 0 -90px;}
+    .c
+    { 
+        border-top: 1px #7c8591 solid;
+        position: relative;
+        top:50px;
+
+     }
+     .r1
+     {
+        width: 600px;
+        position: relative;
+        left:25px;
+        color:#7c8591;
+     }
+     .r2
+     {
+         width:100px;
+         position: relative;
+         left:100px;
+     }
+     .r2-1
+     {
+        
+         position: relative;
+         left:100px;
+     }
+     .userl1
+     {
+         border-bottom:  1px #917c88 solids; 
+         width:400px;
+         height:80px;
+     }
+     .userl2
+     {
+         position: relative;
+         left:25px;
+         color:#323e4a;
+     }
+     .userl3
+     {
+        display:inline-block;
+        position: relative;
+         left:75px;
+         color:#626edd;
+         width: 100px;
+         background-color: #d1d5f4;
+         text-align: center;
+     }
+     .left-1
+     {
+        border-spacing: 15px 10px;
+
+     }
+     .t1{
+        border-collapse: collapse;
+     }
+     .t1 tr {border: #7c8591 1px solid;}
+     .color1
+     { 
+         color:#8d97a5;
+         font-size: small;
+
+    } 
+    .color2
+    {
+       background-color:  #f6f9ff;
+    }
+    .c2
+    {
+        position: relative;
+        left:200px;
+        top:10px;
+    }
+    .userr1
+    {
+        height:50px;
+        border: #7c8591 1px solid;
+    }
+    .c3
+    {
+        background-color:#f6f9ff; 
+        border: #7c8591 1px solid;
+    }
+    .c4
+    {   width: 400px;
+        background-color: #5965db;
+        border-radius: 5px;
+        position: relative;
+        left:25px;
+        color: white;
+    }
+    .c5
+    {   width: 400px;
+        background-color: #eaeff4;
+        border-radius: 5px;
+        position: relative;
+        left:250px;
+        top:50px;
+        color: black;
+
+    }
+    .c6
+    {
+        width: 400px;
+        background-color: #5965db;
+        border-radius: 5px;
+        position: relative;
+        left:25px;
+        top:50px;
+        color: white;
+    }
+   .d1
+   {
+       color:black;
+       border-top: #7c8591 1px solid;
+        position: relative;
+        top:100px;
+   }
+    </style>
+</head>
+<body>
+    <div class="par">
+        <div class="left"> 
+            <div class="left-1">
+                LOGO示例
+            </div>
+            <div class="left-2">
+                 <span class="left-2-1">
+                   <img src="images/02_03.jpg">
+                 </span>
+                 
+                    <span class="left-2-2">名称示例</span><br>
+                    <span class="left-2-3">职称示例</span>
+                
+             </div>
+             <div class="left-3">
+                  <div class="left-3-1"> 菜单</div>
+                  <div class="spirt"> 
+                      <div> <span class="spirt1"> </span> &nbsp;&nbsp;&nbsp;仪表盘</div>
+                      <div> <span class="spirt2"> </span> &nbsp;&nbsp;&nbsp;用户列表</div>
+                      <div> <span class="spirt3"> </span> &nbsp;&nbsp;&nbsp;文件</div>
+                      <div class="spirt4-d"> <span class="spirt4"> </span>&nbsp;&nbsp;&nbsp; 聊天</div>
+                      <div> <span class="spirt5"> </span>&nbsp;&nbsp;&nbsp; 项目</div>
+                      <div> <span class="spirt6"> </span> &nbsp;&nbsp;&nbsp;日程表</div>
+                      <div> <span class="spirt7"> </span> &nbsp;&nbsp;&nbsp;支付方式</div>
+                  </div>
+                  <div class="left-3-2"> 帮助</div>
+                  <div class="a">
+                    <div> <span class="a1"><img src="images/03_36_1.jpg"> </span> &nbsp;&nbsp;需要帮助？</div>
+                    <div> <span class="a2"> <img src="images/03_36_2.jpg"></span> &nbsp;&nbsp;联系我们</div>
+                  </div>
+                  <div class="left-3-2"> 设置</div>
+                  <div class="b">
+                    <div> <span class="b-1"> </span> &nbsp;&nbsp;&nbsp;账号设置</div>
+                    <div> <span class="b-2"> </span> &nbsp;&nbsp;&nbsp;深色模式</div>
+                    <div> <span class="b-3"> </span> &nbsp;&nbsp;&nbsp;退出</div>
+                  </div>
+                  <div class="c"> </div>
+             </div>
+        </div>
+
+        <div class="right">
+            <div class="top">
+               <form>
+                <table>
+                    <tr>
+                        <td> 
+                            <input type="text" value="请输入关键字" class="r1" >
+                        </td>
+                        <td >
+                          <img src="images/01_03.jpg" class="r2-1">
+                          <select class="r2">
+                           
+                              <option>English</option>
+                              <option>Chinese</option>
+                              <option>English</option>
+                          </select>
+                        </td>
+                    </tr>
+                </table>
+               </form>
+            </div>
+            
+            <div class="userp">
+                
+                <div class="userl">
+                     <div class="userl1"> 
+                         <span class="userl2"> 用户列表</span>
+                         <span class="userl3">新消息</span>
+                     </div>
+                     <div>
+                         <table class="t1">
+                             <tr> 
+                                 <td rowspan="2">
+                                    <img src="images/02_07.jpg">
+                                 </td>
+
+                                 <td >
+                                     名字示例
+                                </td>
+                                <td class="color1">
+                                     4:01PM
+                                </td>
+                             </tr>
+                             <tr class="color2"> 
+                                <td>
+                                  你现在应该可以访问所有文<br>档，您现在可以试试看..
+                               </td>
+                               <td>
+                                    
+                               </td>
+                            </tr>
+
+                            <tr class="color2"> 
+                                <td rowspan="2">
+                                   <img src="images/03_30.jpg">
+                                </td>
+
+                                <td>
+                                    名字示例
+                               </td>
+                               <td class="color1">
+                                    3:45PM
+                               </td>
+                            </tr>
+                            <tr> 
+                               <td>
+                                 你现在应该可以访问所有文<br>档，您现在可以试试看..
+                              </td>
+                              <td>
+                                   
+                              </td>
+                           </tr>
+
+                           <tr> 
+                            <td rowspan="2">
+                               <img src="images/01_27.jpg">
+                            </td>
+
+                            <td>
+                               新项目
+                           </td>
+                           <td class="color1">
+                                昨天
+                           </td>
+                        </tr>
+                        <tr> 
+                           <td>
+                             你现在应该可以访问所有文<br>档，您现在可以试试看..
+                          </td>
+                          <td>
+                               
+                          </td>
+                       </tr>
+                       <tr> 
+                        <td rowspan="2">
+                           <img src="images/02_14.jpg">
+                        </td>
+
+                        <td>
+                           进度更新
+                       </td>
+                       <td class="color1">
+                           5天前
+                       </td>
+                    </tr>
+                    <tr> 
+                       <td>
+                         你现在应该可以访问所有文<br>档，您现在可以试试看...
+                      </td>
+                      <td>
+                           
+                      </td>
+                   </tr>
+                   <tr> 
+                    <td rowspan="2">
+                       <img src="images/02_16.jpg">
+                    </td>
+
+                    <td>
+                       工作期望
+                   </td>
+                   <td class="color1">
+                        1周前
+                   </td>
+                </tr>
+                <tr> 
+                   <td>
+                     你现在应该可以访问所有文<br>档，您现在可以试试看...
+                  </td>
+                  <td>
+                       
+                  </td>
+               </tr>
+               <tr> 
+                <td rowspan="2">
+                   <img src="images/02_19.jpg">
+                </td>
+
+                <td>
+                    第一个项目
+               </td>
+               <td class="color1">
+                   3周前
+               </td>
+            </tr>
+            <tr> 
+               <td>
+                 你现在应该可以访问所有文<br>档，您现在可以试试看...
+              </td>
+              <td>
+                   
+              </td>
+           </tr>
+           <tr> 
+            <td rowspan="2">
+               <img src="images/02_21.jpg">
+            </td>
+
+            <td>
+                新工作机会
+           </td>
+           <td class="color1">
+               2019.10.03
+           </td>
+        </tr>
+        <tr> 
+           <td>
+             你现在应该可以访问所有文<br>档，您现在可以试试看...
+          </td>
+          <td>
+               
+          </td>
+       </tr>
+       <tr> 
+        <td rowspan="2">
+           <img src="images/02_24.jpg">
+        </td>
+
+        <td>
+            恭喜啦
+       </td>
+       <td class="color1">
+            2019.10.02
+       </td>
+    </tr>
+    <tr> 
+       <td>
+         你现在应该可以访问所有文<br>档，您现在可以试试看...
+      </td>
+      <td>
+           
+      </td>
+   </tr>
+ </table>
+                 
+      </div>
+ </div>
+    
+                <div class="userr">
+                    <div class="userr1"> 
+                        <span class="c1">新团队成员</span>
+                        <span class="c2">
+                            <img src="images/03_10.jpg">
+                            <img src="images/03_12.jpg">
+                         </span>
+                    </div>
+                    <div class="c3">
+                           <div> <img src="images/03_24.jpg"><span>名字示例</span></div>
+                           <div class="c4"> ﾞ嗨！王小样！我们真的是非常欢迎您来加入我们的团队</div>
+                           <div class="c5"> 谢谢您，我很高兴加入这个出色的设计设计出出色的设计产品！
+                                            非常感谢能有机会开发一些能影响人们生活的产品。我
+                                          迫不及待要开始了！</div>
+                           <div> <img src="images/03_24.jpg"><span>名字示例</span></div>
+                           <div class="c6"> 我们很高兴有您,我们喜欢您在面试中向我们展示的工作,并
+                            且您非常适合我们团队和公司中的我们很高兴有您每个人。我
+                            们很高兴有您如果您有任何疑问,请随时询问,团队中的某个
+                            人将为您提供帮助 </div>
+                           <div class="c6"> 我们很高兴有您,我们喜欢您在面试中向我们展示的工作,并<
+                            且您非常适合我们团队和公司中的我们很高兴有您每个人。我</div>
+                           <div class="c5">谢谢您,我很高兴加入这个出色的设计个出色的设个出色的设
+                            团队!非常感谢能有机会开发一些会影响人们生活的产品。
+                           我等不及要开始了！ </div>
+                           <div> <img src="images/03_39.jpg"><span>Angela Lopez</span></div>
+                           <div class="c6">谢谢您,我很高兴加入这个出色的设计个出色的设个出色的设
+                            团队!非常感谢能有机会开发一些会影响人们生活的产品。
+                           我等不及要开始了！ </div>
+                           <div> <img src="images/03_43.jpg"><span>Terry Griffin</span></div>
+                           <div class="c6">恭喜,王小样,我知道您以后会觉着这是一个非常棒的团队!</div>
+                    </div>
+                    <div class="d1">在这里输入内容.... </div>
+                </div>
+    
+            </div>
+            
+         </div>
+    </div>
+   
+
+</body>
+</html>
