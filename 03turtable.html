@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>turntable</title>
+    <style>
+        * { 
+             margin: 0;
+             padding: 0;
+             line-height: 1;
+             background-color: #e44025;
+             }
+        .box{ 
+            position: relative;
+             width: 802px;
+             height: 802px;
+             overflow: hidden;
+             margin:0 auto;
+             }
+        .turntable{
+             width: 600px; 
+             height: 600px; 
+           
+            }
+        .btn{
+             position: absolute;
+             top: 50%;
+             left: 50%; 
+             width: 100px; 
+             height: 100px;
+             margin: -160px 0 0 -160px;
+             border-radius: 100%; 
+             cursor: pointer; 
+             user-select: none; }
+        .btn:active { transform: scale(0.9); }
+      </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 转盘 -->
+        <img src="01.jpg" id="turntable"  class="turntable" > </img>
+        <!-- 开始按钮 -->
+        <img src="02.jpg" id="startButton"  class="btn"> </img> 
+      </div>
+      <script>
+        // 区分是否可以点击按钮开始抽奖
+        let isRotate = true
+        // 盘子数据
+        const data = [
+          {
+            name: '火锅',
+            rotate: 0,
+          },
+          {
+            name: '炒菜',
+            rotate: 60,
+          },
+          {
+            name: '小面',
+            rotate: 120,
+          },
+          {
+            name: '烤肉',
+            rotate: 180,
+          },
+          {
+            name:'md不吃了',
+            rotate: 240,
+          },
+          {
+              name:'吃食堂去吧',
+              rotate:300,
+          }
+        ]
+        // 游戏
+    const game = {
+      turntable: null,  // 盘子
+      angle: 0, // 旋转角度
+      lastAngle: 0, // 上次旋转角度
+      transitionTime: 5, // 过渡时间 默认5秒
+      init(turntable) {  // 初始化游戏
+        this.turntable = turntable
+        this.turntable.style.transition = `all ${this.transitionTime}s`
+      },
+      rotate(angle, callback) { // 旋转盘子 angle = 旋转角度 callback = 旋转结束的回调函数
+        const defaultAngle = 1800 // 默认先转5圈 再移到正确位置
+        this.angle += defaultAngle + angle - this.lastAngle
+        this.lastAngle = angle
+        this.turntable.style.transform = `rotate(${this.angle}deg)`
+        setTimeout(() => {
+          callback()
+        },this.transitionTime * 1000)
+      }
+    }
+    // 开始抽奖
+    const startGame = () => {
+      // 控制抽奖频率
+      if (!isRotate) { return }
+      isRotate = false
+      // 产生随机数，获得随机抽奖结果
+      const num = Math.floor(Math.random() * data.length)
+      // 启动
+      game.rotate(data[num].rotate, () => {
+        // 动画结束，展示结果
+        alert(`恭喜你喜提-${data[num].name}`)
+        isRotate = true
+      })
+    }
+    // 页面加载后再执行游戏相关操作
+    window.onload = () => {
+      const turntable = document.getElementById('turntable')
+      const startButton = document.getElementById('startButton')
+      // 初始化游戏
+      game.init(turntable)
+      // 绑定开始抽奖按钮点击事件
+      startButton.onclick = startGame
+    }
+</script>
+</body>
+</html>
