@@ -1,0 +1,174 @@
+<!DOCTYPE >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>使用正则表达式验证注册页面</title>
+<style type="text/css">
+
+body{
+
+	font-size:10px;
+	line-height:20px;
+}
+.main{
+	width:500px;
+    position: relative;
+    left:50%;
+	}
+.hr_1 {
+	color: #3275c3;	
+}
+.left{
+	text-align:center;
+	height:30px;
+    color:#79abea
+	}
+	
+.center{
+	width:120px;
+	}
+.msg{
+	width:200px;
+	height:20px;
+	border:solid 1px #79abea;
+    color:rgb(185, 180, 180);
+	}
+
+div{
+	color:red;
+	}	
+</style>
+
+<script type="text/javascript">
+	
+function $(elementId){
+	return document.getElementById(elementId).value;
+}
+function divId(elementId){
+	return document.getElementById(elementId);
+}
+
+/*验证用户名*/
+function checkUser(){
+	var user=$("user");
+	var userId=divId("username");
+	userId.innerHTML="";
+	var reg=/^\w{3,15}$/;	
+	if(!reg.test(user)){
+		
+		userId.innerHTML="用户名不正确(需由由字母和数字或下划线组成的4-16位字符)"
+		return false;
+	}
+    else{
+        userId.innerHTML="用户名合法"
+        return true;
+    }
+	
+}
+
+/*密码验证*/
+function checkPwd(){
+	var pwd=$("pwd");
+	var pwdId=divId("password");
+	pwdId.innerHTML="";
+	 var reg=/^1\d{2}[0-5]\d{2}[6-9][a-dA-D]{8,}$/;
+	if(reg.test(pwd)==false){
+		pwdId.innerHTML="密码不合法(需由英文字母和数字组成的8位字符)";
+		return false;
+	}
+    else{
+        pwdId.innerHTML="密码合法";
+        return true;
+    }
+	
+}
+
+/*检查重复密码*/
+function checkRepwd(){
+	var repwd=$("repwd");
+	var pwd=$("pwd");
+	var repwdId=divId("repassword");
+	repwdId.innerHTML="";
+	if(pwd!=repwd){
+		repwdId.innerHTML="密码不一致";
+		return false;
+	}else{
+        repwdId.innerHTML="密码一致";
+        return true;
+    }
+	
+}
+/*验证手机号*/
+function checkMobile(){
+	var mobile=$("mobile");
+	var mobileId=divId("mobilephone");
+	mobileId.innerHTML="";
+	var regMobile=/^1\d{10}$/;
+	if(regMobile.test(mobile)==false){
+		mobileId.innerHTML="手机号不对，请重新输入";
+		return false;
+	}
+	mobileId.innerHTML="手机号合法";
+	return true;
+}
+
+	
+
+</script>
+</head>
+
+<body>
+	<table class="main" >
+		<tr>
+			<th class="hr_1" >创建账户</th>
+		</tr>
+	
+		<form action="" method="post" name="myform">
+			
+			<tr>
+				<td>
+				
+				<table>
+                    <tr><td class="left">用户名</td> </tr>
+					<tr>
+						<td class="center"><input id="user" type="text" class="msg"  value=" 请输入用户名"onblur="checkUser()"/></td>	
+					</tr>
+                    <tr><td><div id="username"></div></td> </tr>
+
+
+                    <tr> <td class="left">密码</td></tr>
+					<tr>
+						
+						<td class="center"><input id="pwd" type="password" class="msg" value=" 请输入密码" onblur="checkPwd()"/></td>
+						
+					</tr>
+                    <tr> <td><div id=password></div></td></tr>
+
+
+                    <tr> <td class="left">确认密码</td></tr>
+					<tr>
+						
+						<td class="center"><input id="repwd" type="password" class="msg"  value=" 请验证密码"onblur="checkRePwd()"/></td>
+						
+					</tr>
+
+                    <tr><td><div id=repassword></div></td></tr>
+
+
+                    <tr><td class="left">手机号码</td> </tr>
+					<tr>
+						
+						<td class="center"><input id="mobile" type="text" class="msg" value=" 请输入手机号码" onblur="checkMobile()"/></td>
+						
+					</tr>
+				    <tr> <td><div id=mobilephone></div></td></tr>
+				
+					<tr><td class="center" align="center"><input type="button" name="button" value="提交"/></td></tr>
+				</table>
+				
+				</td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>
