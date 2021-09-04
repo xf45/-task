@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .timetable
+        {
+          background-color: rgb(252, 223, 228);
+        }
+        #i1
+        {
+          
+            color:red;
+           font-size: 50px;
+           text-align:center;
+           margin-top: 80px;
+           font-family: inherit;
+        }
+    </style>
+</head>
+<body>
+    <table class="timetable" align="center" border="1" width="800" cellspacing="0">
+        <tr>
+            <caption>课程表</caption>
+        </tr>
+        <tr>
+            <th>项目</th>
+            <th colspan="5">上课</th>
+            <th colspan="2">休息</th>
+        <tr>
+            <th>星期</th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+            <th>星期六</th>
+            <th>星期日</th>
+        </tr>
+        <tr>
+            <td rowspan="4">上午</td>
+            <td>c语言</td>
+            <td>高数</td>
+            <td>大英2</td>
+            <td>口语课</td>
+            <td>物理</td>
+            <td>计算机</td>
+            <td rowspan="4">休息</td>
+        </tr>
+        <tr>
+            <td>高数</td>
+            <td>高数</td>
+            <td>地理</td>
+            <td>近代史</td>
+            <td>化学</td>
+            <td>计算机</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>语文</td>
+            <td>体育</td>
+            <td>计算机</td>
+            <td>大英2</td>
+            <td>计算机</td>
+        </tr>
+        <tr>
+            <td>思修</td>
+            <td>大英2</td>
+            <td>体育</td>
+            <td>近代史</td>
+            <td>地理</td>
+            <td>计算机</td>
+        </tr>
+        <tr>
+            <td rowspan="2">下午</td>
+            <td>语文</td>
+            <td>高数</td>
+            <td>大英2</td>
+            <td>大英2</td>
+            <td>地理</td>
+            <td>计算机</td>
+            <td rowspan="2">休息</td>
+        </tr>
+        <tr>
+            <td>语文</td>
+            <td>高数</td>
+            <td>地理</td>
+            <td>近代史</td>
+            <td>化学</td>
+            <td>计算机</td>
+        </tr>
+  </table>
+ 
+    <div id="i1"> 
+        开学了! 开学了! 开学了! 开学了!
+     
+    </div>
+    
+
+</body>
+<script>
+  function f() {
+         //根据id获取所对应的div
+         var tag = document.getElementById('i1')
+        //拿到div中的文本
+        var content = tag.innerText
+        //获取它这个字符串的第一个文字
+         var z =content.charAt(0)
+         //获取这个文本除第一个字以外的文本，用substring给它起始位置
+         var  l = content.substring(1,content.length)
+         //把第一个字符放到最后一位拼接起来       
+           var new_content = l+z
+        //用新生成new_content把div中的文本替换掉
+        tag.innerText = new_content
+    }
+    //setInterval是个定时器，第一个参数是要执行的内容，第二个参数是执行间隔，单位为毫秒
+    setInterval('f()',1000)
+</script>
+
+
+</html>
